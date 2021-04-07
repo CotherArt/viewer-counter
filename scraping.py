@@ -4,9 +4,11 @@ from time import sleep
 from filemanager import guardar
 
 PATH = "C:/Users/Cother/bin/geckodriver.exe"
-url = "https://www.twitch.tv/otropinshimichi"
+url = "https://www.twitch.tv/knekro"
 
-driver = webdriver.Firefox(executable_path=PATH)
+options = webdriver.FirefoxOptions()
+options.headless = True
+driver = webdriver.Firefox(executable_path=PATH, options=options)
 driver.get(url) # Abre la url en el navegador
 
 def viewers():
