@@ -1,15 +1,26 @@
 from selenium import webdriver
 from selenium.webdriver.firefox import options as FirefoxOptions
 from time import sleep
-from filemanager import guardar
 
-PATH = "C:/Users/Cother/bin/geckodriver.exe"
-url = "https://www.twitch.tv/knekro"
 
+# Direccion del webdriver
+PATH = "C:\\Users\\Cother\\bin\\geckodriver.exe"
+# Direccion del canal de twitch
+url = "https://www.twitch.tv/flaiveth"
+# Number of viewers
+viewers = -1
+# Crear el objeto opciones de Firefox
 options = webdriver.FirefoxOptions()
+# Alterar la propiedad headless para que no sea visible la ventana
 options.headless = True
+# crear el objeto driver y asignarle el PATH y las opciones
 driver = webdriver.Firefox(executable_path=PATH, options=options)
-driver.get(url) # Abre la url en el navegador
+
+def start():
+    driver.get(url) # Abre la url en el navegador
+
+def stop():
+    driver.quit() # Cerrar la ventana del navegador
 
 def viewers():
     try:
@@ -27,9 +38,18 @@ def viewers_rec():
         print(viewers())
         sleep(1)
 
-print('viewers')
-print(viewers())
-print('viewers_rec')
-viewers_rec()
 
-driver.quit() # Cerrar la ventana del navegador
+def test(): # Testea esta cosa
+    print('viewers')
+    print(viewers())
+    print('viewers_rec')
+    viewers_rec()
+
+def main():
+    start()
+    test()
+    stop()
+
+if __name__ == "__main__":
+    main()
+
