@@ -11,7 +11,6 @@ def main():
             bufer = viewers
         print(viewers)
 
-
     sc.top()
         
 

@@ -6,13 +6,13 @@ from time import sleep
 # Direccion del webdriver
 PATH = "C:\\Users\\Cother\\bin\\geckodriver.exe"
 # Direccion del canal de twitch
-url = "https://www.twitch.tv/flaiveth"
+url = "https://www.twitch.tv/wismichu"
 # Number of viewers
 viewers = -1
 # Crear el objeto opciones de Firefox
 options = webdriver.FirefoxOptions()
 # Alterar la propiedad headless para que no sea visible la ventana
-options.headless = True
+options.headless = False
 # crear el objeto driver y asignarle el PATH y las opciones
 driver = webdriver.Firefox(executable_path=PATH, options=options)
 
